@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h3>Scenario 1</h3>
+<input id="btn" value="botton 1" type="button" />
+<input id="btn2" value="botton 2" type="button" />​
+
+
+<br/>
+<br/>
+<br/>
+<h3>Scenario 2</h3>
+<input id="btn3" value="botton 3" type="button" />
+<input id="btn4" value="botton 4" type="button" />​
+
+
+
+<script>
+//Scenario 1
+$("#btn").bind("click",function(e) {
+    var data2 = {type:"click",name:"Raptors",sport:"basketball"};
+    $("#btn2").trigger(data2);
+});
+$("#btn2").bind("click",function(e) {
+console.log('invoked');
+console.log(e);
+   console.log(e.name + " " + e.sport);
+});
+
+//Scenario 2
+$("#btn3").bind("click",function(e) {
+    var event = $.Event("click");
+	event.name = "Raptors";
+	event.sport = "basketball";
+
+$("#btn4").trigger(event);
+});
+$("#btn4").bind("click",function(e) {
+console.log('invoked');
+console.log(e);
+   console.log(e.name + " " + e.sport);
+});
+
+</script>
+</body>
+</html>
