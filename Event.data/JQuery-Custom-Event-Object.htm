@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<input id="btn" value="botton 1" type="button" />
+<input id="btn2" value="botton 2" type="button" />​
+<script>
+$("#btn").bind("click",function(e) {
+    var data2 = {type:"click",name:"Raptors",sport:"basketball"};
+    $("#btn2").trigger(data2);
+});
+$("#btn2").bind("click",function(e) {
+console.log('invoked');
+console.log(e);
+   console.log(e.name + " " + e.sport);
+});
+</script>
+</body>
+</html>
